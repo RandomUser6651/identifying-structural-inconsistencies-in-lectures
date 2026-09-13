@@ -1,0 +1,41 @@
+{
+ "name": "concept_extraction_ua",
+ "strict": true,
+ "schema": {
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["lecture_id", "concepts", "prerequisites"],
+  "properties": {
+   "lecture_id": {"type": "string"},
+   "concepts": {
+    "type": "array",
+    "items": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": ["name", "aliases", "definition", "first_mentioned_unit", "role"],
+     "properties": {
+      "name": {"type": "string", "minLength": 1},
+      "aliases": {"type": "array", "items": {"type": "string"}},
+      "definition": {"type": "string"},
+      "first_mentioned_unit": {"type": "string", "pattern": "^\\d{2}#\\d{2}$"},
+      "role": {"type": "string", "enum": ["introduced", "used"]}
+     }
+    }
+   },
+   "prerequisites": {
+    "type": "array",
+    "items": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": ["from", "to", "reason", "evidence_unit"],
+     "properties": {
+      "from": {"type": "string", "minLength": 1},
+      "to": {"type": "string", "minLength": 1},
+      "reason": {"type": "string"},
+      "evidence_unit": {"type": "string", "pattern": "^\\d{2}#\\d{2}$"}
+     }
+    }
+   }
+  }
+ }
+}

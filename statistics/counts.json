@@ -1,0 +1,34 @@
+{
+  "description": "Counts reported in the article. recall: identified controlled injections out of 9 per course and defect type, and the paired outcome of the two methods on the same injections. precision: flagged and confirmed issues per course on naturally occurring issues.",
+  "recall": {
+    "injections_per_course_and_type": 9,
+    "temporal_graph": {
+      "software architecture": {"use before introduction": 9, "orphan concept": 9, "definition conflict": 7},
+      "pedagogy": {"use before introduction": 9, "orphan concept": 9, "definition conflict": 9},
+      "discrete mathematics": {"use before introduction": 9, "orphan concept": 9, "definition conflict": 8}
+    },
+    "direct_model": {
+      "software architecture": {"use before introduction": 8, "orphan concept": 9, "definition conflict": 9},
+      "pedagogy": {"use before introduction": 5, "orphan concept": 7, "definition conflict": 6},
+      "discrete mathematics": {"use before introduction": 7, "orphan concept": 5, "definition conflict": 7}
+    },
+    "paired": {
+      "both_identified": 61,
+      "temporal_graph_only": 17,
+      "direct_model_only": 2,
+      "both_missed": 1
+    }
+  },
+  "precision": {
+    "temporal_graph": {
+      "software architecture": {"flagged": 37, "confirmed": 36},
+      "pedagogy": {"flagged": 46, "confirmed": 41},
+      "discrete mathematics": {"flagged": 78, "confirmed": 46}
+    },
+    "direct_model": {
+      "software architecture": {"flagged": 11, "confirmed": 7},
+      "pedagogy": {"flagged": 7, "confirmed": 5},
+      "discrete mathematics": {"flagged": 4, "confirmed": 2}
+    }
+  }
+}

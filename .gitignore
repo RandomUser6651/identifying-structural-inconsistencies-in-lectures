@@ -1,0 +1,7 @@
+# Course materials and pipeline outputs are not part of this repository.
+datasets-ua/
+new-results/
+
+__pycache__/
+*.pyc
+.env
